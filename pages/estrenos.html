@@ -33,6 +33,20 @@
 </head>
 
 <body>
+    <button onclick="redirigirATMDB()" id="btnElijePeliculas" style="position: absolute; top: 20px; right: 20px;">
+        Elige tus películas</button>
+
+    <script type="text/javascript">
+        function redirigirATMDB() {
+            // Reemplaza 'tu_api_key' con tu clave de API real de TMDB
+            var apiKey = '4406b4f2bd08c2066629770979d4532b';
+            var urlBase = 'https://api.themoviedb.org/3/';
+            var urlCompleta = urlBase + 'discover/movie?api_key=' + apiKey;
+
+            
+            window.location.href = 'https://www.themoviedb.org/'
+        }
+    </script>
     <h1>Lo más visto hoy</h1>
     
     <div class="movie-container">

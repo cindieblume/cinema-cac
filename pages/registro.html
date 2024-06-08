@@ -73,8 +73,41 @@
             </form>
 
     </div>
+    
+    
+        
+    <script>
+    document.addEventListener('DOMContentLoaded', async function() {
+        
+        try {
+            const response = await fetch('https://randomuser.me/api/');
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const data = await response.json();
+            const usuarioAleatorio = data.results[0];
+    
+            
+            document.getElementById('nombre').value = usuarioAleatorio.name.first;
+            document.getElementById('apellido').value = usuarioAleatorio.name.last;
+            
+            document.getElementById('contrasena').value = '12345678'; 
+    
+        } catch (error) {
+            console.error('Error al obtener datos de usuario aleatorio:', error);
+        }
+    
+        
+        document.getElementById('form-registro').addEventListener('submit', async function(event) {
+            event.preventDefault(); 
+    
+            
+        });
+    });
+</script>
+    
 
     
         
-    </body>
-    </html>
+</body>
+</html>
