@@ -51,7 +51,7 @@
 <body>
     <div class="registration-form">
         <h1>Registro</h1>
-        <form>
+        <form id="form-registro">
             <div class="input-field">
                 <label for="nombre">Nombre</label>
                 <input type="text" id="nombre" name="nombre" placeholder="María" required>
@@ -99,7 +99,11 @@
     
         
         document.getElementById('form-registro').addEventListener('submit', async function(event) {
-            event.preventDefault(); 
+            event.preventDefault();
+            
+            localStorage.setItem('usuarioRegistrado', true);
+
+            window.location.href = 'iniciosesion.html';
     
             
         });
